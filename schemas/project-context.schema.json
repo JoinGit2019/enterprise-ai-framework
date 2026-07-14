@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/project-context.schema.json",
+  "title": "Project Context",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "project",
+    "runtime",
+    "structure",
+    "generatedAt"
+  ],
+  "properties": {
+    "project": {
+      "type": "object",
+      "required": [
+        "root",
+        "name"
+      ],
+      "properties": {
+        "root": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string"
+        },
+        "projectType": {
+          "type": "string"
+        }
+      }
+    },
+    "schemaVersion": {
+      "type": "string"
+    },
+    "generatedBy": {
+      "type": "string"
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "php": {
+          "type": "string"
+        },
+        "framework": {
+          "type": "string"
+        },
+        "frontend": {
+          "type": "string"
+        },
+        "composer": {
+          "type": "boolean"
+        },
+        "node": {
+          "type": "boolean"
+        }
+      }
+    },
+    "structure": {
+      "type": "object",
+      "properties": {
+        "rootFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "directories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "importantPaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generatedAt": {
+      "type": "string"
+    }
+  }
+}

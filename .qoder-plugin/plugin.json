@@ -1,0 +1,19 @@
+{
+  "name": "enterprise-ai-framework",
+  "version": "0.2.0",
+  "description": "Chinese-first enterprise AI software engineering framework for SDLC workflows, PHP/ThinkPHP projects, documentation, review, and project context scanning.",
+  "author": {
+    "name": "Enterprise AI Framework Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "sdlc",
+    "php",
+    "thinkphp",
+    "api-documentation",
+    "code-review",
+    "enterprise"
+  ],
+  "skills": "./skills/",
+  "rules": "./.qoder/rules/"
+}

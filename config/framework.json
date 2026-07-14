@@ -1,0 +1,211 @@
+{
+  "name": "Enterprise AI Software Engineering Framework",
+  "versionFile": "VERSION",
+  "language": "zh-CN",
+  "description": "面向企业软件研发全生命周期的 AI 软件工程框架。",
+  "layers": [
+    "Standards",
+    "Roles",
+    "Runtimes",
+    "ProjectTypes",
+    "Profiles",
+    "Skills",
+    "Workflows",
+    "Templates",
+    "Orchestrator"
+  ],
+  "standards": [
+    "Coding",
+    "Commenting",
+    "CodeStyle",
+    "NamingConvention",
+    "Logging",
+    "ExceptionHandling",
+    "Security",
+    "Performance",
+    "Testing",
+    "Documentation",
+    "Frontend"
+  ],
+  "roles": [
+    "PHPDeveloper",
+    "FrontendDeveloper",
+    "ProductManager",
+    "Architect",
+    "Tester",
+    "CodeReviewer"
+  ],
+  "profiles": [
+    "PHP5.4-ThinkPHP3",
+    "PHP7.2-ThinkPHP5.1",
+    "PHP7.4-ThinkPHP5.1",
+    "HTML-CSS-JavaScript"
+  ],
+  "skills": [
+    "RequirementAnalysis",
+    "TechnicalDesign",
+    "RiskAnalysis",
+    "DatabaseDesign",
+    "ApiDesign",
+    "TaskBreakdown",
+    "CodeGeneration",
+    "Debugging",
+    "UnitTesting",
+    "CodeReview",
+    "ApiDocumentation",
+    "ChangeSummary",
+    "ExistingLogicAnalysis",
+    "FrontendImplementation"
+  ],
+  "workflows": [
+    "FeatureDevelopment",
+    "BugFix",
+    "ExistingLogicConfirmation",
+    "CodeReview",
+    "ApiDevelopment",
+    "FrontendImplementation",
+    "DatabaseMigration"
+  ],
+  "templates": [
+    "RequirementAnalysis",
+    "TechnicalDesign",
+    "RiskAnalysis",
+    "ApiDocumentation",
+    "ChangeSummary",
+    "ReleaseNote",
+    "ExistingLogicAnalysis",
+    "ProjectContext"
+  ],
+  "orchestrator": {
+    "cachePolicy": "Orchestrator/CachePolicy.md",
+    "projectScanPolicy": "Orchestrator/ProjectScanPolicy.md",
+    "routingPolicy": "Orchestrator/RoutingPolicy.md",
+    "shortcutCommands": "Orchestrator/ShortcutCommands.md",
+    "roleSelectionPolicy": "Orchestrator/RoleSelectionPolicy.md"
+  },
+  "pluginSupport": {
+    "codex": {
+      "manifest": ".codex-plugin/plugin.json",
+      "skills": "skills/"
+    },
+    "qoder": {
+      "manifest": ".qoder-plugin/plugin.json",
+      "rules": ".qoder/rules/enterprise-ai-framework.md",
+      "skills": "skills/"
+    }
+  },
+  "shortcutCommands": {
+    "INIT": {
+      "workflow": "ContextInitialization",
+      "skills": [
+        "enterprise-ai-framework"
+      ],
+      "modifyCode": false
+    },
+    "API_DOC": {
+      "workflow": "ApiDevelopment",
+      "skills": [
+        "ApiDocumentation",
+        "ExistingLogicAnalysis"
+      ],
+      "modifyCode": false
+    },
+    "LOGIC": {
+      "workflow": "ExistingLogicConfirmation",
+      "skills": [
+        "ExistingLogicAnalysis"
+      ],
+      "modifyCode": false
+    },
+    "BUG": {
+      "workflow": "BugFix",
+      "skills": [
+        "Debugging",
+        "RiskAnalysis",
+        "ChangeSummary"
+      ],
+      "modifyCode": "depends-on-user-request"
+    },
+    "FEATURE": {
+      "workflow": "FeatureDevelopment",
+      "skills": [
+        "RequirementAnalysis",
+        "TechnicalDesign",
+        "RiskAnalysis",
+        "TaskBreakdown",
+        "CodeGeneration",
+        "UnitTesting",
+        "CodeReview",
+        "ChangeSummary"
+      ],
+      "modifyCode": true
+    },
+    "REVIEW": {
+      "workflow": "CodeReview",
+      "skills": [
+        "CodeReview"
+      ],
+      "modifyCode": false
+    },
+    "FRONTEND": {
+      "workflow": "FrontendImplementation",
+      "skills": [
+        "ExistingLogicAnalysis",
+        "FrontendImplementation",
+        "CodeReview",
+        "ChangeSummary"
+      ],
+      "modifyCode": "depends-on-user-request"
+    },
+    "SQL_REVIEW": {
+      "workflow": "DatabaseMigration",
+      "skills": [
+        "RiskAnalysis",
+        "DatabaseDesign"
+      ],
+      "modifyCode": false
+    },
+    "PROJECT_SCAN": {
+      "workflow": "ProjectScan",
+      "skills": [
+        "ProjectContext"
+      ],
+      "modifyCode": false
+    }
+  },
+  "runtimeDetection": {
+    "php": [
+      "composer.json",
+      "composer.lock",
+      "Dockerfile",
+      "docker-compose.yml"
+    ],
+    "thinkphp": [
+      "ThinkPHP/ThinkPHP.php",
+      "vendor/topthink/framework",
+      "think",
+      "application"
+    ],
+    "frontend": [
+      "package.json",
+      "webpack.config.js",
+      "vite.config.js",
+      "public",
+      "assets",
+      "static",
+      "src"
+    ]
+  },
+  "todo": [
+    "Java",
+    "Go",
+    "Python",
+    "Laravel",
+    "SpringBoot",
+    "AIWorkflows",
+    "MCP",
+    "OpenAPI",
+    "Apifox",
+    "YApi"
+  ]
+}
