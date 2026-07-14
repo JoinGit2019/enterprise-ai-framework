@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ai-framework/hooks/enterprise-ai-framework-instructions.js"
+          }
+        ]
+      }
+    ]
+  }
+}

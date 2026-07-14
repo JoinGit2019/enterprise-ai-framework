@@ -15,5 +15,6 @@
     "enterprise"
   ],
   "skills": "./skills/",
-  "rules": "./.qoder/rules/"
+  "rules": "./.qoder/rules/",
+  "hooks": "./hooks/qoder-hooks.json"
 }

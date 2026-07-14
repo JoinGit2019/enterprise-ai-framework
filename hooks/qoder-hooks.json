@@ -1,0 +1,15 @@
+{
+  "_comment": "Reference template. Copy the hooks object into your project .qoder/settings.json or ~/.qoder/settings.json. Replace ENTERPRISE_AI_FRAMEWORK_DIR with the path to this framework checkout.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ENTERPRISE_AI_FRAMEWORK_DIR/hooks/enterprise-ai-framework-instructions.js"
+          }
+        ]
+      }
+    ]
+  }
+}

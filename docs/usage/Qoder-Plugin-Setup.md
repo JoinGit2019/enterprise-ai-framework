@@ -118,16 +118,44 @@ project-scan
 
 Ponytail 还提供 hooks，用于每次 Prompt 自动注入规则。
 
-本框架当前不强制依赖 hooks，因为 `.qoder/rules/enterprise-ai-framework.md` 和 `AGENTS.md` 已覆盖常规使用。
-
-未来可以追加：
+本框架也提供 Qoder hooks 模板：
 
 ```text
 hooks/qoder-hooks.json
+hooks/enterprise-ai-framework-instructions.js
+.qoder/settings.example.json
+```
+
+如果你希望 Qoder 每次提交 prompt 时自动注入框架规则和 `.agent/` 上下文，可以把 `.qoder/settings.example.json` 复制到业务项目：
+
+```text
 .qoder/settings.json
 ```
 
-用于实现每次 prompt 自动注入 `.agent/` 上下文和框架规则。
+如果业务项目中的框架目录名就是 `ai-framework/`，可以直接执行：
+
+```bash
+mkdir -p .qoder
+cp ai-framework/.qoder/settings.example.json .qoder/settings.json
+```
+
+如果框架目录不是 `ai-framework/`，需要修改 `.qoder/settings.json` 中的命令路径。
+
+hook 使用的是：
+
+```text
+UserPromptSubmit
+```
+
+它会在每次 prompt 提交时注入：
+
+- `AGENTS.md`
+- `.qoder/rules/enterprise-ai-framework.md`
+- `.agent/runtime.md`
+- `.agent/context.md`
+- `.agent/structure.md`
+
+这能减少每次新会话手动输入 `INIT` 的成本。
 
 ## 推荐操作
 
@@ -136,6 +164,7 @@ hooks/qoder-hooks.json
 ```bash
 mkdir -p .qoder/rules
 cp ai-framework/.qoder/rules/enterprise-ai-framework.md .qoder/rules/
+cp ai-framework/.qoder/settings.example.json .qoder/settings.json
 bash ai-framework/scripts/scan_project.sh . --write
 ```
 
@@ -152,3 +181,5 @@ API_DOC DiyController.php
 LOGIC DiyController.php
 BUG 会员同步失败
 ```
+
+如果 hook 已生效，通常不需要每次输入 `INIT`，但输入 `INIT` 仍然可以作为显式初始化检查。

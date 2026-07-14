@@ -21,6 +21,9 @@ required_paths=(
   ".codex-plugin/plugin.json"
   ".qoder-plugin/plugin.json"
   ".qoder/rules/enterprise-ai-framework.md"
+  ".qoder/settings.example.json"
+  "hooks/qoder-hooks.json"
+  "hooks/enterprise-ai-framework-instructions.js"
   "config/framework.json"
   "schemas/project-context.schema.json"
   "scripts/scan_project.sh"
@@ -78,6 +81,8 @@ if command -v ruby >/dev/null 2>&1; then
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .agents/plugins/marketplace.json || fail "invalid JSON: .agents/plugins/marketplace.json"
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .codex-plugin/plugin.json || fail "invalid JSON: .codex-plugin/plugin.json"
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .qoder-plugin/plugin.json || fail "invalid JSON: .qoder-plugin/plugin.json"
+  ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' hooks/qoder-hooks.json || fail "invalid JSON: hooks/qoder-hooks.json"
+  ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .qoder/settings.example.json || fail "invalid JSON: .qoder/settings.example.json"
 else
   warn "ruby not found; skipped JSON validation"
 fi
@@ -104,6 +109,7 @@ while IFS= read -r skill_file; do
 done < <(find skills -mindepth 2 -maxdepth 2 -name 'SKILL.md' | sort)
 
 bash -n scripts/scan_project.sh || fail "invalid shell syntax: scripts/scan_project.sh"
+node --check hooks/enterprise-ai-framework-instructions.js || fail "invalid JS syntax: hooks/enterprise-ai-framework-instructions.js"
 
 scan_tmp="$(mktemp -d)"
 trap 'rm -rf "$scan_tmp"' EXIT

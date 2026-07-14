@@ -54,6 +54,9 @@ Qoder 插件入口：
 ```text
 .qoder-plugin/plugin.json
 .qoder/rules/enterprise-ai-framework.md
+.qoder/settings.example.json
+hooks/qoder-hooks.json
+hooks/enterprise-ai-framework-instructions.js
 skills/
 ```
 
@@ -135,6 +138,14 @@ API_DOC DiyController.php
 ```
 
 ### Qoder
+
+如果希望 Qoder 每轮自动注入规则和 `.agent/` 上下文，复制 settings 示例：
+
+```bash
+mkdir -p .qoder/rules
+cp ai-framework/.qoder/rules/enterprise-ai-framework.md .qoder/rules/
+cp ai-framework/.qoder/settings.example.json .qoder/settings.json
+```
 
 如果 Qoder 已识别本插件或规则文件，新会话可以直接输入：
 
