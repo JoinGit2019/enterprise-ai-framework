@@ -72,6 +72,7 @@ Read:
 
 - [docs/usage/Using-In-Development-Projects.md](docs/usage/Using-In-Development-Projects.md)
 - [docs/usage/Codex-And-Qoder-Plugin.md](docs/usage/Codex-And-Qoder-Plugin.md)
+- [docs/usage/Qoder-Plugin-Setup.md](docs/usage/Qoder-Plugin-Setup.md)
 - [docs/usage/examples/AGENTS.example.md](docs/usage/examples/AGENTS.example.md)
 - [docs/usage/examples/PHP7.2-ThinkPHP5.1-Project.md](docs/usage/examples/PHP7.2-ThinkPHP5.1-Project.md)
 

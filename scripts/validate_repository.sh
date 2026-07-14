@@ -15,6 +15,7 @@ warn() {
 
 required_paths=(
   "README.md"
+  "AGENTS.md"
   "VERSION"
   ".agents/plugins/marketplace.json"
   ".codex-plugin/plugin.json"
@@ -53,6 +54,7 @@ required_paths=(
   "Templates/ProjectContext/README.md"
   "docs/usage/examples/AGENTS.example.md"
   "docs/usage/Codex-And-Qoder-Plugin.md"
+  "docs/usage/Qoder-Plugin-Setup.md"
   "docs/usage/examples/PHP7.2-ThinkPHP5.1-Project.md"
   "skills/enterprise-ai-framework/SKILL.md"
   "skills/ApiDocumentation/SKILL.md"
