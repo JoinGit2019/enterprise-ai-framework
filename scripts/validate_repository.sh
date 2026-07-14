@@ -16,6 +16,7 @@ warn() {
 required_paths=(
   "README.md"
   "VERSION"
+  ".agents/plugins/marketplace.json"
   ".codex-plugin/plugin.json"
   ".qoder-plugin/plugin.json"
   ".qoder/rules/enterprise-ai-framework.md"
@@ -72,6 +73,7 @@ done
 if command -v ruby >/dev/null 2>&1; then
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' config/framework.json || fail "invalid JSON: config/framework.json"
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' schemas/project-context.schema.json || fail "invalid JSON: schemas/project-context.schema.json"
+  ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .agents/plugins/marketplace.json || fail "invalid JSON: .agents/plugins/marketplace.json"
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .codex-plugin/plugin.json || fail "invalid JSON: .codex-plugin/plugin.json"
   ruby -rjson -e 'JSON.parse(File.read(ARGV[0]))' .qoder-plugin/plugin.json || fail "invalid JSON: .qoder-plugin/plugin.json"
 else
@@ -88,6 +90,9 @@ codex_skills_path="$(ruby -rjson -e 'print JSON.parse(File.read(".codex-plugin/p
 qoder_skills_path="$(ruby -rjson -e 'print JSON.parse(File.read(".qoder-plugin/plugin.json")).fetch("skills")' 2>/dev/null || true)"
 [[ -z "$codex_skills_path" || "$codex_skills_path" == "./skills/" ]] || fail "Codex plugin skills path must be ./skills/"
 [[ -z "$qoder_skills_path" || "$qoder_skills_path" == "./skills/" ]] || fail "Qoder plugin skills path must be ./skills/"
+
+marketplace_plugin_name="$(ruby -rjson -e 'print JSON.parse(File.read(".agents/plugins/marketplace.json")).fetch("plugins").first.fetch("name")' 2>/dev/null || true)"
+[[ -z "$marketplace_plugin_name" || "$marketplace_plugin_name" == "enterprise-ai-framework" ]] || fail "marketplace plugin name must be enterprise-ai-framework"
 
 while IFS= read -r skill_file; do
   first_line="$(sed -n '1p' "$skill_file")"

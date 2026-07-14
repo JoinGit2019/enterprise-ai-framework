@@ -35,6 +35,7 @@ The framework also provides a lightweight machine-readable entrypoint:
 - `config/framework.json` - framework layers, profiles, skills, workflows, templates, and detection hints
 - `schemas/project-context.schema.json` - recommended project context structure
 - `scripts/scan_project.sh` - one-time project scanner for real business projects
+- `.agents/plugins/marketplace.json` - Codex marketplace entry for GitHub installation
 
 Recommended first run in a business project:
 

@@ -24,6 +24,7 @@
 Codex 插件入口：
 
 ```text
+.agents/plugins/marketplace.json
 .codex-plugin/plugin.json
 skills/
 ```
@@ -100,6 +101,26 @@ bash ai-framework/scripts/scan_project.sh . --write
 ## 使用建议
 
 ### Codex
+
+如果仓库已推送到 GitHub，可以先添加 marketplace：
+
+```bash
+codex plugin marketplace add JoinGit2019/enterprise-ai-framework
+```
+
+然后安装插件：
+
+```bash
+codex plugin add enterprise-ai-framework@enterprise-ai-framework
+```
+
+安装后需要新开一个 Codex 会话，再输入：
+
+```text
+/skills
+```
+
+确认列表里出现 `enterprise-ai-framework` 或相关技能。
 
 如果 Codex 已安装本插件，新会话可以直接输入：
 

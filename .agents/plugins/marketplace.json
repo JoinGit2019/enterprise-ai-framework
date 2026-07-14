@@ -1,0 +1,21 @@
+{
+  "name": "enterprise-ai-framework",
+  "interface": {
+    "displayName": "Enterprise AI Framework"
+  },
+  "plugins": [
+    {
+      "name": "enterprise-ai-framework",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JoinGit2019/enterprise-ai-framework.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
