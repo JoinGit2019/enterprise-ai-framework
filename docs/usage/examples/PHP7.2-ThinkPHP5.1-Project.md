@@ -28,6 +28,14 @@ ai-framework/
 
 多个项目共用时，可以使用 Git Submodule；单项目试用时，也可以直接复制目录。
 
+如果目录名不是 `ai-framework/`，需要同步修改 `AGENTS.md` 和扫描命令。
+
+业务项目中的 `.agent/` 是本地缓存目录，必须加入业务项目 `.gitignore`：
+
+```gitignore
+.agent/
+```
+
 ## 第二步：创建 AGENTS.md
 
 将本目录下的 `AGENTS.example.md` 复制到业务项目根目录，并改名为：

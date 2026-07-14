@@ -9,6 +9,16 @@
 
 插件模式适合减少每次新会话手动输入初始化提示词的问题。
 
+如果使用插件模式，不一定需要在业务项目中创建 `ai-framework/` 目录。
+
+但如果你还需要使用 `scripts/scan_project.sh`，仍然需要让业务项目能访问本框架脚本，常见方式有：
+
+- 将本框架作为 `ai-framework/` 目录放入业务项目
+- 将本框架作为 Git Submodule 放入业务项目
+- 从本框架仓库路径直接执行扫描脚本
+
+无论哪种方式，业务项目生成的 `.agent/` 都是本地缓存，不应提交到业务代码仓库。
+
 ## Codex 插件入口
 
 Codex 插件入口：
@@ -73,6 +83,8 @@ PROJECT_SCAN
 ```bash
 bash ai-framework/scripts/scan_project.sh . --write
 ```
+
+如果业务项目没有 `ai-framework/` 目录，可以改用本框架实际路径执行脚本。
 
 生成：
 

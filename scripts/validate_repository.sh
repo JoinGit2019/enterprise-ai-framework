@@ -122,6 +122,10 @@ if rg -nF "$ROOT_DIR" . --glob '!scripts/validate_repository.sh' >/tmp/eaisef-ab
   fail "repository contains machine-specific absolute links"
 fi
 
+for ignored_path in ".agent" "work" "outputs" "node_modules" "vendor"; do
+  rg -n "^${ignored_path}/$" .gitignore >/dev/null || fail ".gitignore must ignore ${ignored_path}/"
+done
+
 while IFS= read -r md_file; do
   first_line="$(sed -n '1p' "$md_file")"
   if [[ "$(basename "$md_file")" == "SKILL.md" ]]; then

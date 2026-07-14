@@ -1,3 +1,17 @@
 .DS_Store
 .idea/
 
+# Project-local AI context cache generated in business projects.
+.agent/
+
+# Local scratch/output directories.
+work/
+outputs/
+
+# Dependency and runtime noise.
+node_modules/
+vendor/
+
+# Logs and temporary files.
+*.log
+*.tmp

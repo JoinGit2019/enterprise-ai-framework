@@ -51,6 +51,8 @@ This creates:
 
 After these files exist, Agent tools should reuse them by default and avoid scanning the whole project on every task.
 
+`.agent/` is a project-local cache directory and should not be committed to business repositories.
+
 ## Validation
 
 Run the repository validation script before publishing or installing into another project:
