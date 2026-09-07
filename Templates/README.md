@@ -11,6 +11,7 @@ Templates 定义每类交付文档的标准结构，保证不同 Workflow 产出
 - `RiskAnalysis`
 - `ExistingLogicAnalysis`
 - `ApiDocumentation`
+- `TechnicalDocumentation`
 - `ChangeSummary`
 - `ReleaseNote`
 

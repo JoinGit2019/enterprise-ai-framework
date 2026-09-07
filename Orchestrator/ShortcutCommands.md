@@ -20,6 +20,7 @@
 |---|---|---|---|---|
 | `INIT` | 初始化当前会话上下文 | Context Initialization | `enterprise-ai-framework` | 否 |
 | `API_DOC` | 生成接口文档 | `ApiDevelopment` | `ApiDocumentation` | 否 |
+| `TECH_DOC` | 生成技术文档 | `TechnicalDocumentation` | `TechnicalDocumentation` | 否 |
 | `LOGIC` | 确认现有功能逻辑 | `ExistingLogicConfirmation` | `ExistingLogicAnalysis` | 否 |
 | `BUG` | 排查或修复问题 | `BugFix` | `Debugging` | 视用户要求 |
 | `FEATURE` | 新增功能 | `FeatureDevelopment` | `RequirementAnalysis` | 是 |
@@ -78,6 +79,34 @@ API_DOC DiyController.php
 - 错误场景
 - 依赖的 Service / Model
 - 待确认问题
+
+### TECH_DOC
+
+```text
+TECH_DOC 订单退款模块
+```
+
+含义：
+
+- 梳理指定功能、模块或子系统的现有实现
+- 不修改代码
+- 基于真实代码整合输出结构化技术文档
+- 无法确认的信息标记为“需确认”
+- 文档落地到 `outputs/tech-doc/` 目录
+
+默认输出：
+
+- 文档概述与读者对象
+- 背景与业务场景
+- 架构与模块划分
+- 核心流程与调用链
+- 数据模型
+- 关键业务规则与边界条件
+- 外部依赖
+- 运行与部署
+- 已知问题与风险
+- 待确认事项
+- 参考代码入口清单
 
 ### LOGIC
 

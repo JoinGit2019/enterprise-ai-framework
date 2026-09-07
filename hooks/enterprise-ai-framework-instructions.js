@@ -37,7 +37,7 @@ function buildContext(projectRoot) {
     '- 生成代码前必须确认 PHP、ThinkPHP、前端构建链路和项目结构。',
     '- 用户只要求分析、文档或评审时，不得修改代码。',
     '- 不确定的信息必须标记为“需确认”。',
-    '- 支持快捷指令：INIT、API_DOC、LOGIC、BUG、FEATURE、REVIEW、FRONTEND、SQL_REVIEW、PROJECT_SCAN。',
+    '- 支持快捷指令：INIT、API_DOC、TECH_DOC、LOGIC、BUG、FEATURE、REVIEW、FRONTEND、SQL_REVIEW、PROJECT_SCAN。',
     '',
   ];
 

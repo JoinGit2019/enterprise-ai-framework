@@ -294,6 +294,7 @@ Examples:
 - `UnitTesting`
 - `CodeReview`
 - `ApiDocumentation`
+- `TechnicalDocumentation`
 - `ChangeSummary`
 
 ## Workflows
@@ -326,6 +327,7 @@ Examples:
 - `TechnicalDesign`
 - `RiskAnalysis`
 - `ApiDocumentation`
+- `TechnicalDocumentation`
 - `ChangeSummary`
 - `ReleaseNote`
 

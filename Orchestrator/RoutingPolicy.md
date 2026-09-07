@@ -30,6 +30,7 @@
 示例：
 
 - `API_DOC DiyController.php` -> `ApiDevelopment` + `ApiDocumentation`
+- `TECH_DOC 订单退款模块` -> `TechnicalDocumentation` + `TechnicalDocumentation`
 - `LOGIC DiyController.php` -> `ExistingLogicConfirmation` + `ExistingLogicAnalysis`
 - `BUG 会员同步失败` -> `BugFix` + `Debugging`
 - `FEATURE 新增优惠券领取接口` -> `FeatureDevelopment`

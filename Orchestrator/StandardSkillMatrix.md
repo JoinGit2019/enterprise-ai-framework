@@ -28,6 +28,7 @@
 | `UnitTesting` | `Testing`, `NamingConvention`, `Documentation` | 测试需要命名清晰、覆盖关键路径 |
 | `CodeReview` | `Coding`, `CodeStyle`, `Security`, `Performance`, `Testing` | 代码评审需要检查兼容、质量、安全、性能和测试 |
 | `ApiDocumentation` | `Documentation`, `NamingConvention`, `ExceptionHandling` | 接口文档需要稳定字段、错误码和示例 |
+| `TechnicalDocumentation` | `Documentation`, `NamingConvention`, `ExceptionHandling` | 技术文档需要清晰结构、稳定术语，并覆盖依赖、异常与风险说明 |
 | `ChangeSummary` | `Documentation`, `Testing`, `ExceptionHandling` | 变更总结需要说明影响、验证和回滚 |
 
 ## 使用原则

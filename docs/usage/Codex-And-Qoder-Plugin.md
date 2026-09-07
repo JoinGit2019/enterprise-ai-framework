@@ -142,9 +142,26 @@ API_DOC DiyController.php
 如果希望 Qoder 每轮自动注入规则和 `.agent/` 上下文，复制 settings 示例：
 
 ```bash
+bash ai-framework/scripts/install_qoder_project.sh .
+```
+
+安装脚本会复制：
+
+```text
+.qoder/settings.json
+.qoder/rules/enterprise-ai-framework.md
+.qoder/skills/
+```
+
+如果需要手动安装：
+
+```bash
 mkdir -p .qoder/rules
 cp ai-framework/.qoder/rules/enterprise-ai-framework.md .qoder/rules/
 cp ai-framework/.qoder/settings.example.json .qoder/settings.json
+rm -rf .qoder/skills
+mkdir -p .qoder/skills
+cp -R ai-framework/skills/. .qoder/skills/
 ```
 
 如果 Qoder 已识别本插件或规则文件，新会话可以直接输入：

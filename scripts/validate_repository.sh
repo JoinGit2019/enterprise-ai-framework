@@ -27,6 +27,7 @@ required_paths=(
   "config/framework.json"
   "schemas/project-context.schema.json"
   "scripts/scan_project.sh"
+  "scripts/install_qoder_project.sh"
   "Standards/README.md"
   "Roles/README.md"
   "Runtimes/README.md"
@@ -109,6 +110,7 @@ while IFS= read -r skill_file; do
 done < <(find skills -mindepth 2 -maxdepth 2 -name 'SKILL.md' | sort)
 
 bash -n scripts/scan_project.sh || fail "invalid shell syntax: scripts/scan_project.sh"
+bash -n scripts/install_qoder_project.sh || fail "invalid shell syntax: scripts/install_qoder_project.sh"
 node --check hooks/enterprise-ai-framework-instructions.js || fail "invalid JS syntax: hooks/enterprise-ai-framework-instructions.js"
 
 scan_tmp="$(mktemp -d)"
@@ -129,6 +131,17 @@ fi
 if grep -Fx 'Application' "$scan_tmp/.agent/context.json" >/dev/null; then
   fail "project scanner matched Application when only application exists"
 fi
+
+install_tmp="$(mktemp -d)"
+mkdir -p "$install_tmp/application/index/controller"
+printf '{"require":{"php":"~7.2","topthink/framework":"5.1.*"}}\n' > "$install_tmp/composer.json"
+bash scripts/install_qoder_project.sh "$install_tmp" >/tmp/eaisef-qoder-install-smoke.txt
+[[ -f "$install_tmp/.qoder/settings.json" ]] || fail "Qoder installer did not write .qoder/settings.json"
+[[ -f "$install_tmp/.qoder/rules/enterprise-ai-framework.md" ]] || fail "Qoder installer did not write .qoder/rules/enterprise-ai-framework.md"
+[[ -f "$install_tmp/.qoder/skills/enterprise-ai-framework/SKILL.md" ]] || fail "Qoder installer did not copy skills into .qoder/skills"
+[[ -f "$install_tmp/.agent/context.md" ]] || fail "Qoder installer did not generate .agent/context.md"
+[[ -f "$install_tmp/AGENTS.md" ]] || fail "Qoder installer did not create AGENTS.md"
+rg -n '^\.agent/$' "$install_tmp/.gitignore" >/dev/null || fail "Qoder installer did not ignore .agent/"
 
 if rg -nF "$ROOT_DIR" . --glob '!scripts/validate_repository.sh' >/tmp/eaisef-absolute-links.txt; then
   cat /tmp/eaisef-absolute-links.txt >&2

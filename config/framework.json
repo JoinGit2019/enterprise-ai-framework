@@ -53,6 +53,7 @@
     "UnitTesting",
     "CodeReview",
     "ApiDocumentation",
+    "TechnicalDocumentation",
     "ChangeSummary",
     "ExistingLogicAnalysis",
     "FrontendImplementation"
@@ -71,6 +72,7 @@
     "TechnicalDesign",
     "RiskAnalysis",
     "ApiDocumentation",
+    "TechnicalDocumentation",
     "ChangeSummary",
     "ReleaseNote",
     "ExistingLogicAnalysis",
@@ -106,6 +108,14 @@
       "workflow": "ApiDevelopment",
       "skills": [
         "ApiDocumentation",
+        "ExistingLogicAnalysis"
+      ],
+      "modifyCode": false
+    },
+    "TECH_DOC": {
+      "workflow": "TechnicalDocumentation",
+      "skills": [
+        "TechnicalDocumentation",
         "ExistingLogicAnalysis"
       ],
       "modifyCode": false

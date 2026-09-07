@@ -19,6 +19,7 @@ Skills 是最小原子能力层，用于把需求分析、设计、实现、测�
 - `UnitTesting`
 - `CodeReview`
 - `ApiDocumentation`
+- `TechnicalDocumentation`
 - `ChangeSummary`
 
 ## 使用原则
@@ -36,6 +37,7 @@ Skills 是最小原子能力层，用于把需求分析、设计、实现、测�
 - 修改代码：`CodeGeneration`
 - 修改前端页面：`FrontendImplementation`
 - 输出文档：`ApiDocumentation` 或 `ChangeSummary`
+- 梳理现有功能并输出技术文档：`TechnicalDocumentation`
 
 ## TODO
 

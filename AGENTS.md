@@ -38,6 +38,7 @@ Qoder、Codex 或其他 Agent 进入本仓库时，应优先读取本文件，�
 
 - `INIT`
 - `API_DOC`
+- `TECH_DOC`
 - `LOGIC`
 - `BUG`
 - `FEATURE`

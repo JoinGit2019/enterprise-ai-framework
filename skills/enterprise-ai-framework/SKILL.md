@@ -43,6 +43,7 @@ bash ai-framework/scripts/scan_project.sh . --write
 
 - `INIT`：读取项目规则和 `.agent/` 上下文
 - `API_DOC`：接口文档
+- `TECH_DOC`：技术文档
 - `LOGIC`：现有逻辑分析
 - `BUG`：问题排查
 - `FEATURE`：新增功能

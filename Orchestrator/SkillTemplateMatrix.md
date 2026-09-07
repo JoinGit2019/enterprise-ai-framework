@@ -28,6 +28,7 @@
 | `UnitTesting` | `ChangeSummary` | 测试结果常纳入变更总结 |
 | `CodeReview` | `ChangeSummary` | Review 结果通常进入变更总结或评审报告 |
 | `ApiDocumentation` | `ApiDocumentation` | 接口文档技能直接输出接口文档 |
+| `TechnicalDocumentation` | `TechnicalDocumentation`, `ExistingLogicAnalysis` | 技术文档整合输出，可复用现有逻辑分析结果 |
 | `ChangeSummary` | `ChangeSummary`, `ReleaseNote` | 变更总结也可作为发布说明基础 |
 
 ## 工作流常见组合

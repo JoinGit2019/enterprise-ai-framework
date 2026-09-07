@@ -49,11 +49,32 @@ your-business-project/
 └── 项目代码
 ```
 
-还需要把规则复制到业务项目：
+推荐直接执行安装脚本：
+
+```bash
+bash ai-framework/scripts/install_qoder_project.sh .
+```
+
+它会自动安装：
+
+```text
+.qoder/settings.json
+.qoder/rules/enterprise-ai-framework.md
+.qoder/skills/
+.agent/
+AGENTS.md（如果当前项目还没有）
+```
+
+并自动执行一次项目扫描，生成 `.agent/` 上下文。
+
+如果手动安装，需要把规则和 skills 都复制到业务项目：
 
 ```bash
 mkdir -p .qoder/rules
 cp ai-framework/.qoder/rules/enterprise-ai-framework.md .qoder/rules/
+rm -rf .qoder/skills
+mkdir -p .qoder/skills
+cp -R ai-framework/skills/. .qoder/skills/
 ```
 
 建议业务项目保留一个简短的 `AGENTS.md`，用于记录项目特殊规则。
@@ -73,6 +94,7 @@ bash /path/to/enterprise-ai-framework/scripts/scan_project.sh . --write
 ```text
 .agent/
 .qoder/rules/enterprise-ai-framework.md
+.qoder/skills/
 AGENTS.md
 ```
 
@@ -162,9 +184,18 @@ UserPromptSubmit
 实际业务项目中最稳的 Qoder 接入方式：
 
 ```bash
+bash ai-framework/scripts/install_qoder_project.sh .
+```
+
+如果需要手动操作，则执行：
+
+```bash
 mkdir -p .qoder/rules
 cp ai-framework/.qoder/rules/enterprise-ai-framework.md .qoder/rules/
 cp ai-framework/.qoder/settings.example.json .qoder/settings.json
+rm -rf .qoder/skills
+mkdir -p .qoder/skills
+cp -R ai-framework/skills/. .qoder/skills/
 bash ai-framework/scripts/scan_project.sh . --write
 ```
 
